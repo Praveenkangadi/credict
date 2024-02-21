@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+      h1 {
+        margin-bottom: 5px;
+        margin-top: 30px;
+      text-align: center;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 3px;
+      background-color: #28a745;
+      color: #fff;
+      text-align: center;
+      display: none;
+    }
+
+    /* Add some basic styles for invalid input */
+    input:invalid {
+      border: 1px solid #dc3545;
+    }
+
+    input:valid {
+      border: 1px solid #28a745;
+    }
+  </style>
+  
+<body>
+  <form action="submit" method="post">
+    
+    <br><br><br><br>  <br><br>  <br><br>  <br><br>  <br>
+    <br>  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>  <br>
+    <br>  <br><br>  <br><br> 
+    <h1>ENTER THE DETAILS CREDIT CARD HOLDER</h1>
+    <br>
+    <label for="a">Annual Income:
+      <input type="text" name="a" id="">
+    </label><br></br>
+    <label for="b">Monthly Inhand Salary
+      <input type="text" name="b" id="">
+    </label><br></br>
+    <label for="c">Number of Bank Accounts:
+      <input type="text" name="c" id="">
+    </label><br></br>
+    <label for="d">Number of Credit cards:
+      <input type="text" name="d" id="">
+    </label><br></br>
+    <label for="e">Interest rate:
+      <input type="text" name="e" id="">
+    </label><br></br>
+    <label for="f">Number of Loans:
+      <input type="text" name="f" id="">
+    </label><br></br>
+    <label for="g">Average number of days delayed by the person:
+      <input type="text" name="g" id="">
+    </label><br></br>
+    <label for="h">Number of delayed payments:
+      <input type="text" name="h" id="" >
+    </label><br></br>
+    <label for="i">Credit Mix (Bad: 0, Standard: 1, Good: 3) :
+      <input type="text" name="i" id="">
+    </label><br></br>
+    <label for="j">Outstanding Debt:
+      <input type="text" name="j" id="">
+    </label><br></br>
+    <label for="k">Credit History Age:
+      <input type="text" name="k" id="">
+    </label><br></br>
+    <label for="l">Monthly Balance:
+      <input type="text" name="l" id="">
+    </label><br></br>
+    <button type="submit">Get Result</button>
+  </form>
+</body>
+
+</html>

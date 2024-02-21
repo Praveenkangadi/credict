@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Eligibility Checker</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 3px;
+      background-color: #28a745;
+      color: #fff;
+      text-align: center;
+      display: none;
+    }
+
+    /* Add some basic styles for invalid input */
+    input:invalid {
+      border: 1px solid #dc3545;
+    }
+
+    input:valid {
+      border: 1px solid #28a745;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="myForm" action="/" method="post" onsubmit="return validateForm()">
+    <label for="a">Annual Income:
+      <input type="text" name="a" id="a" required>
+    </label><br><br>
+
+    <label for="b">Monthly Inhand Salary
+      <input type="text" name="b" id="b" required>
+    </label><br><br>
+
+    <!-- Add labels and inputs for other fields -->
+
+    <button type="submit">Get Result</button>
+  </form>
+
+  <h1 id="result-heading">Result</h1>
+  <div id="result"></div>
+
+  <script>
+    function validateForm() {
+      // Validation for all fields
+      var fields = ['a', 'b']; // Add other field IDs as needed
+
+      for (var i = 0; i < fields.length; i++) {
+        var fieldValue = document.getElementById(fields[i]).value;
+        if (!fieldValue || isNaN(fieldValue) || fieldValue <= 0) {
+          alert('Please enter valid values for all fields.');
+          return false;
+        }
+      }
+
+      // Additional validation logic as needed
+
+      // Display the result
+      displayResult();
+
+      return false; // Prevent form submission for this example
+    }
+
+    function displayResult() {
+      var resultHeading = document.getElementById('result-heading');
+      var resultDiv = document.getElementById('result');
+      var annualIncome = parseFloat(document.getElementById('a').value);
+      var monthlySalary = parseFloat(document.getElementById('b').value);
+
+      // Add your logic to calculate the result based on the input values
+      var eligibility = (annualIncome * 0.1 + monthlySalary * 0.5) > 10000; // Example logic
+
+      if (eligibility) {
+        resultHeading.textContent = 'Congratulations!';
+        resultDiv.textContent = 'You are eligible for the loan.';
+        resultDiv.style.backgroundColor = '#28a745';
+      } else {
+        resultHeading.textContent = 'Sorry!';
+        resultDiv.textContent = 'You are not eligible for the loan.';
+        resultDiv.style.backgroundColor = '#dc3545';
+      }
+
+      // Show the result
+      resultDiv.style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
