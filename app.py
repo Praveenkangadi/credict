@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from logic.algorithm import *
+from waitress import serve
 
 
 app = Flask(__name__)
@@ -21,4 +22,4 @@ def home():
   return render_template('index.html', result=r)
 
 if __name__=='__main__':
-  app.run(debug=True)
+  serve(app, host='0.0.0.0', port=50100)
