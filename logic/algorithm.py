@@ -1,7 +1,7 @@
 import os
 import joblib
 import numpy as np
-logisticRegression = joblib.load(os.getcwd()+'\logic\RandomForest.joblib')
+logisticRegression = joblib.load(os.getcwd()+r'/logic/RandomForest.joblib')
 
 def getResult(li:list):
 
